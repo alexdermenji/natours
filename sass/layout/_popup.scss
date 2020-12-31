@@ -41,7 +41,6 @@
   }
 
 
-
   &__content {
     position: absolute;
     top: 50%;
@@ -61,6 +60,12 @@
   &__left {
     width: 33.333333%;
     display: table-cell;
+    vertical-align: middle;
+
+    @include respond(phone) {
+      width: 100%;
+      display: block;
+    }
   }
 
   &__right {
@@ -68,11 +73,22 @@
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+
+    @include respond(phone) {
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
   }
 
   &__img {
     width: 100%;
     display: block;
+
+    @include respond(phone) {
+      width: 49%;
+      display: inline-block;
+    }
   }
 
   &__text {
@@ -82,5 +98,12 @@
     column-gap: 4rem;
     column-rule: 1px solid $color-grey-dark-2;
     hyphens: auto;
+
+    @include respond(tab-port) {
+      column-count: 1;
+      column-gap: 0;
+      column-rule: none;
+      text-align: left;
+    }
   }
 }
